@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
+// ignore: must_be_immutable
 class AppText extends StatelessWidget {
   double size;
   final String text;

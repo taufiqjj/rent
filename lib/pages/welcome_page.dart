@@ -42,7 +42,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           text: "Mountain",
                           size: 30,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Container(
@@ -54,10 +54,10 @@ class _WelcomePageState extends State<WelcomePage> {
                             size: 14,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
-                        ResponsiveButton(
+                        const ResponsiveButton(
                           width: 120,
                         )
                       ],
