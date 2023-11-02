@@ -45,7 +45,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Container(
+                        SizedBox(
                           width: 250,
                           child: AppText(
                             text:
