@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:rent/misc/colors.dart';
+import 'package:rent/pages/navpages/main_page.dart';
 import 'package:rent/widgets/app_large_text.dart';
 import 'package:rent/widgets/app_text.dart';
 import 'package:rent/widgets/responsive_button.dart';
+import 'navpages/main_page.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -13,21 +15,29 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   List images = ["welcome-one.png", "welcome-two.jpg", "welcome-three.jpg"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: images.length,
-          itemBuilder: (_, index) {
-            return Container(
-              width: double.maxFinite,
-              height: double.maxFinite,
+        scrollDirection: Axis.vertical,
+        itemCount: images.length,
+        itemBuilder: (_, index) {
+          return InkWell(
+            onTap: () {
+              // Navigate to the DestinationPage when the button is tapped
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const MainPage(),
+              ));
+            },
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    // ignore: prefer_interpolation_to_compose_strings
-                    image: AssetImage("images/" + images[index]),
-                    fit: BoxFit.cover),
+                  image: AssetImage("images/" + images[index]),
+                  fit: BoxFit.cover,
+                ),
               ),
               child: Container(
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
@@ -49,7 +59,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           width: 250,
                           child: AppText(
                             text:
-                                "mountain hikes give you an incredibke sense of freedin along with endurance tests",
+                                "Mountain hikes give you an incredible sense of freedom along with endurance tests.",
                             color: AppColors.textColor2,
                             size: 14,
                           ),
@@ -57,7 +67,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(
                           height: 40,
                         ),
-                        const ResponsiveButton(
+                        ResponsiveButton(
                           width: 120,
                         )
                       ],
@@ -69,18 +79,21 @@ class _WelcomePageState extends State<WelcomePage> {
                           width: 8,
                           height: index == indexDots ? 25 : 8,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: index == indexDots
-                                  ? AppColors.mainColor
-                                  : AppColors.mainColor.withOpacity(0.3)),
+                            borderRadius: BorderRadius.circular(8),
+                            color: index == indexDots
+                                ? AppColors.mainColor
+                                : AppColors.mainColor.withOpacity(0.3),
+                          ),
                         );
                       }),
-                    )
+                    ),
                   ],
                 ),
               ),
-            );
-          }),
+            ),
+          );
+        },
+      ),
     );
   }
 }

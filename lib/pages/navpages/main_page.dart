@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rent/pages/navpages/bar_item_page.dart';
-import 'package:rent/pages/navpages/home_page.dart';
+import 'package:rent/pages/home_page.dart';
+import 'package:rent/pages/detail_page.dart';
 import 'package:rent/pages/navpages/my_page.dart';
 import 'package:rent/pages/navpages/search_page.dart';
 
@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
 
   List<Widget> pages = [
     const HomePage(),
-    const BarItemPage(),
+    const DetailPage(),
     const SearchPage(),
     const MyPage(),
   ];
@@ -46,8 +46,7 @@ class _MainPageState extends State<MainPage> {
         elevation: 0,
         items: const [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.apps)),
-          BottomNavigationBarItem(
-              label: "Bar", icon: Icon(Icons.bar_chart_sharp)),
+          BottomNavigationBarItem(label: "Detail", icon: Icon(Icons.details)),
           BottomNavigationBarItem(label: "Search", icon: Icon(Icons.search)),
           BottomNavigationBarItem(label: "My", icon: Icon(Icons.person)),
         ],

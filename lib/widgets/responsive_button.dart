@@ -1,30 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:rent/misc/colors.dart';
+import 'package:rent/widgets/app_text.dart';
 
 class ResponsiveButton extends StatelessWidget {
-  final bool isResponsive;
-  final double width;
+  bool? isResponsive;
+  double? width;
 
-  const ResponsiveButton({
+  ResponsiveButton({
     Key? key,
-    this.width = 100.0,
+    this.width = 120,
     this.isResponsive = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: 60,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: AppColors.mainColor,
-      ),
-      child: Center(
-        child: Image.asset(
-          "images/arrow.png",
-          width: 50, // Specify the width you desire
-          height: 65, // Specify the height you desire
+    return Flexible(
+      child: Container(
+        width: isResponsive == true ? double.maxFinite : width,
+        height: 55,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: AppColors.mainColor,
+        ),
+        child: Row(
+          mainAxisAlignment: isResponsive == true
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
+          children: [
+            isResponsive == true
+                ? Container(
+                    margin: const EdgeInsets.only(left: 20),
+                    child: AppText(
+                      text: "Book Trip Now",
+                      color: Colors.white,
+                    ),
+                  )
+                : Container(),
+            isResponsive == true
+                ? Container(
+                    margin: const EdgeInsets.only(right: 20),
+                    child: Image.asset(
+                      "images/arrow.png",
+                      width: 50,
+                      height: 65,
+                    ),
+                  )
+                : Container(
+                    // margin: const EdgeInsets.only(right: 20),
+                    child: Image.asset(
+                      "images/arrow.png",
+                      width: 50,
+                      height: 65,
+                    ),
+                  ),
+          ],
         ),
       ),
     );
