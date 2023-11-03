@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rent/widgets/app_text.dart';
 
+// ignore: must_be_immutable
 class AppButtons extends StatelessWidget {
   final Color color;
   String? text;

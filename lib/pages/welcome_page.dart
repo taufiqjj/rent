@@ -4,7 +4,6 @@ import 'package:rent/pages/navpages/main_page.dart';
 import 'package:rent/widgets/app_large_text.dart';
 import 'package:rent/widgets/app_text.dart';
 import 'package:rent/widgets/responsive_button.dart';
-import 'navpages/main_page.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);

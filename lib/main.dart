@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rent/pages/detail_page.dart';
-import 'package:rent/pages/navpages/main_page.dart';
 import 'package:rent/pages/welcome_page.dart';
 
 void main() {

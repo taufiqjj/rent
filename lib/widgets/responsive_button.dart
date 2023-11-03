@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rent/misc/colors.dart';
 import 'package:rent/widgets/app_text.dart';
 
+// ignore: must_be_immutable
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
@@ -45,14 +46,11 @@ class ResponsiveButton extends StatelessWidget {
                       height: 65,
                     ),
                   )
-                : Container(
-                    // margin: const EdgeInsets.only(right: 20),
-                    child: Image.asset(
-                      "images/arrow.png",
-                      width: 50,
-                      height: 65,
-                    ),
-                  ),
+                : Image.asset(
+                  "images/arrow.png",
+                  width: 50,
+                  height: 65,
+                ),
           ],
         ),
       ),

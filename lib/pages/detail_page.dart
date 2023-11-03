@@ -19,7 +19,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Stack(
@@ -45,7 +45,7 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.menu),
+                    icon: const Icon(Icons.menu),
                   ),
                 ],
               ),
@@ -56,7 +56,7 @@ class _DetailPageState extends State<DetailPage> {
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
                 width: MediaQuery.of(context).size.width,
                 height: 500,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
@@ -79,21 +79,21 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_on,
                           color: AppColors.mainColor,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         AppText(
                           text: "USA, California",
                           color: AppColors.textColor1,
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         Wrap(
@@ -113,25 +113,25 @@ class _DetailPageState extends State<DetailPage> {
                             );
                           }),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         AppText(
                           text: "($gottenStars.0)",
                           color: AppColors.textColor2,
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     AppLargeText(
                       text: "People",
                       color: Colors.black.withOpacity(0.8),
                       size: 20,
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     AppText(
                       text: "Number of people in your group",
                       color: AppColors.mainTextColor,
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Wrap(
                       children: List.generate(5, (index) {
                         return InkWell(
@@ -159,13 +159,13 @@ class _DetailPageState extends State<DetailPage> {
                         );
                       }),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     AppLargeText(
                       text: "Description",
                       color: Colors.black.withOpacity(0.8),
                       size: 20,
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     AppText(
                       text:
                           "Lorem ipsum dolor sit amet, consectetur lorem sit adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ",
@@ -189,7 +189,7 @@ class _DetailPageState extends State<DetailPage> {
                       isIcon: true,
                       icon: Icons.favorite_border,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     ResponsiveButton(
